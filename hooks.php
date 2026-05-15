@@ -7,6 +7,7 @@ define('SS_JOBDESC', 119 << 8);
 
 class hooks_fa_jobdescriptions extends hooks {
     var $module_name = 'fa_jobdescriptions';
+    var $version = '1.0.0';
 
     function install_options($app) {
         global $path_to_root;
