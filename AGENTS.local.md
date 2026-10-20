@@ -7,7 +7,7 @@
 ```
 ksf_FA_JobDescriptions/
 ├── sql/
-│   ├── fa_job_descriptions.sql
+│   ├── ksf_jobdescriptions_job_descriptions.sql
 │   └── fa_job_skills.sql
 ├── includes/
 │   ├── job_desc_db.inc
