@@ -1,6 +1,8 @@
 -- JobDescriptions module database schema for FrontAccounting
 
-CREATE TABLE IF NOT EXISTS `fa_job_descriptions` (
+ALTER TABLE IF EXISTS `fa_job_descriptions` RENAME TO `0_ksf_jobdescriptions_job_descriptions`;
+
+CREATE TABLE IF NOT EXISTS `0_ksf_jobdescriptions_job_descriptions` (
     `id` INT(11) NOT NULL AUTO_INCREMENT,
     `title` VARCHAR(255) NOT NULL,
     `department` VARCHAR(100) DEFAULT NULL,
@@ -16,4 +18,4 @@ CREATE TABLE IF NOT EXISTS `fa_job_descriptions` (
     KEY `department` (`department`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-INSERT INTO `fa_modules` (`name`, `version`, `enabled`, `installed`) VALUES ('JobDescriptions', '1.0.0', 1, NOW()) ON DUPLICATE KEY UPDATE `version` = '1.0.0';
+INSERT INTO `0_ksf_modules` (`name`, `version`, `enabled`, `installed`) VALUES ('JobDescriptions', '1.0.0', 1, NOW()) ON DUPLICATE KEY UPDATE `version` = '1.0.0';
