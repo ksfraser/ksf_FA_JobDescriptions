@@ -1,0 +1,20 @@
+-- JobDescriptions module database schema for FrontAccounting
+-- Table: 0_ksf_jobdescriptions_job_descriptions
+
+ALTER TABLE IF EXISTS `fa_job_descriptions` RENAME TO `0_ksf_jobdescriptions_job_descriptions`;
+
+CREATE TABLE IF NOT EXISTS `0_ksf_jobdescriptions_job_descriptions` (
+    `id` INT(11) NOT NULL AUTO_INCREMENT,
+    `title` VARCHAR(255) NOT NULL,
+    `department` VARCHAR(100) DEFAULT NULL,
+    `level` VARCHAR(50) DEFAULT NULL,
+    `summary` TEXT,
+    `responsibilities` TEXT,
+    `qualifications` TEXT,
+    `skills` TEXT,
+    `status` ENUM('Active','Inactive') NOT NULL DEFAULT 'Active',
+    `created_by` INT(11) DEFAULT NULL,
+    `created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (`id`),
+    KEY `department` (`department`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
